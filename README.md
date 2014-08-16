@@ -54,10 +54,17 @@ owns the graph
 data structure and exposes function calls to generator threads. Submodule
 setEnvironment
 reads
-and parses an input file that contains information about each participating university with the
-following schema:
-UNIVERSITY university_name
-DEPARTMENT dept_name num_faculty num_students_per_year semester_dept_courses
-semeseter_nondept_courses
-COURSE course_number dept_that_offers frequency_per_year
-INTEREST interest_name popularity
+and parses an input file that contains information about each participating university.
+
+**PART B**:
+***GraphGyani***
+This module is made of a perl script,Gyani, and and a C executable,Analyzer. Analyzer is started from within Gyani.
+Gyani reads query lines from stdin and parses each line. It makes the best guess about the query being made and packs the query to Analyzer and relays the answer back to stdout. Analyzer begins by reading the graph from the GraphML provided on the command line and performs computations to answer queries. It supports the following queries (you should implement
+Dijkstra's shortest path and Floyd–Warshall all-pair shortest path algorithms):
+
+1. Size of Clique of a given person (identified by university name and ID)
+2. The length of the shortest path between two given people
+3. The list of people on the shortest path between two given people
+4. The shortest path in the graph (between any pair of people)
+5. The importance of the given person (the importance is the number of the all-pair shortest paths that include that person)
+6. Is any of the friends of a given person more important that him/her
