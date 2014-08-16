@@ -24,11 +24,7 @@ produce the social network graph.
 ***NetworkGen***
 This module creates agents and simulates their behavior to produce a graph with nodes and edges. It
 consists of two processes.
-1.
-One is
-TimeKeeper
-.
-It keeps time in terms of the number of simulated seconds since its start. It
+1. One is TimeKeeper. It keeps time in terms of the number of simulated seconds since its start. It
 advances the seconds at simulation speed as follows. It takes “alarm” requests by other “client”
 processes for a future time. If the request is for a past time, the request is denied (and the
 requester informed). Otherwise, the requester is woken up at the appropriate time. It can also be
@@ -38,11 +34,8 @@ to choose the communication method – sockets and signals are candidates. It's 
 threads of the
 Generator
 process described next.
-2.
-The second process,
-Generator
-, first runs submodule
-setEnvironment
+
+2. The second process, Generator , first runs submodule setEnvironment
 and then forks four co-
 operating generator threads.
 Generator
