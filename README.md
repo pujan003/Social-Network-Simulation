@@ -1,3 +1,8 @@
+
+Link to the product statement : http://www.cse.iitd.ac.in/~subodh/courses/CSP301/product2.pdf
+
+
+
 The goal of this product is to answer simple english language queries about a social network. 
 
 In particular, I will simulate an academic social network, spread potentially across multiple universities. 
