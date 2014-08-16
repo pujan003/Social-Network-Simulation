@@ -24,30 +24,18 @@ produce the social network graph.
 ***NetworkGen***
 This module creates agents and simulates their behavior to produce a graph with nodes and edges. It
 consists of two processes.
+
 1. One is TimeKeeper. It keeps time in terms of the number of simulated seconds since its start. It
 advances the seconds at simulation speed as follows. It takes “alarm” requests by other “client”
 processes for a future time. If the request is for a past time, the request is denied (and the
 requester informed). Otherwise, the requester is woken up at the appropriate time. It can also be
 queried for the current time. Timekeeper advances time to the next alarmed event's time in
 sequence unless a client has requested a “time pause.” Initially, the time is paused. You are free
-to choose the communication method – sockets and signals are candidates. It's clients are the
-threads of the
-Generator
-process described next.
+to choose the communication method – sockets and signals are candidates. It's clients are the threads of the
+Generator process described next.
 
-2. The second process, Generator , first runs submodule setEnvironment
-and then forks four co-
-operating generator threads.
-Generator
-executable takes a command-line parameter for the
-number of days the generator simulates as “-d num_days”.
-Module
-Network
-owns the graph
-data structure and exposes function calls to generator threads. Submodule
-setEnvironment
-reads
-and parses an input file that contains information about each participating university.
+2. The second process, Generator , first runs submodule setEnvironment and then forks four co-
+operating generator threads. Generator executable takes a command-line parameter for the number of days the generator simulates as “-d num_days”. Module Network owns the graph data structure and exposes function calls to generator threads. Submodule setEnvironment reads and parses an input file that contains information about each participating university.
 
 **PART B**:
 ***GraphGyani***
